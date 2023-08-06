@@ -24,4 +24,10 @@ public class InventoryController {
     public List<InventoryResponse> isInStock(@RequestParam List<String> skuCode) {
         return inventoryService.inStock(skuCode);
     }
+    @GetMapping("/a")
+    @ResponseStatus(HttpStatus.CREATED)
+    public String get() {
+        return "done";
+    }
+
 }

@@ -4,6 +4,7 @@ import com.programmingtechie.orderservice.dto.OrderRequest;
 import com.programmingtechie.orderservice.service.OrderService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +22,12 @@ public class OrderController {
     @ResponseStatus(HttpStatus.CREATED)
     public String placeOrder(@RequestBody OrderRequest orderRequest) {
         orderService.placeOrder(orderRequest);
+        return "done";
+    }
+
+    @GetMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public String get() {
         return "done";
     }
 }
